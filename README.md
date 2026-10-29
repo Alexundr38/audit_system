@@ -34,13 +34,3 @@ docker compose exec app node dist/setup-audit.js
 | `src/index.ts` | демо-скрипт приложения |
 | `src/setup-audit.ts` | генерация триггеров аудита |
 | `src/aggregate-audit.ts` | воркер агрегации `audit_log` → `audit_log_aggregated` |
-
-
-## Troubleshooting
-
-| Проблема | Решение |
-|---|---|
-| Таблицы не создались | init-скрипты идут только на пустом volume → `docker compose down -v && docker compose up -d --build` |
-| Нет записей в `audit_log` | не выполнен шаг 4 (`setup-audit.js`) |
-| `cannot cast type xid8 to bigint` | в `setup-audit.ts` должно быть `pg_current_xact_id()::text::bigint` → `docker compose build app` + шаг 4 |
-| Порт занят | поменять `DB_PORT` в `.env` |
