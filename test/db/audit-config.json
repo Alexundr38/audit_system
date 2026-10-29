@@ -1,0 +1,15 @@
+{
+  "tables": [
+    {
+      "table": "students"
+    },
+    {
+      "table": "gradebooks",
+      "exclude": ["created_at"]
+    },
+    {
+      "table": "teachers",
+      "fields": ["first_name", "last_name", "email", "department_id"]
+    }
+  ]
+}

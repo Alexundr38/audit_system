@@ -1,0 +1,23 @@
+{
+  "name": "ts-postgres-template",
+  "version": "1.0.0",
+  "description": "Минимальный шаблон TypeScript-приложения с PostgreSQL через Docker",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "setup:audit": "tsx src/setup-audit.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
